@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+        width: 30%;
+        margin: auto;
+        margin-top: 50px;
+        border: 1px solid;
+        height: 270px;
+        padding: 25px;
+    }
+    
+    .left {
+        width: 50%;
+        float: left;
+    }
+    
+    .right {
+        width: 50%;
+        float: right;
+    }
+    
+    input {
+        margin-top: 10px;
+    }
+</style>
+<script>
+    function kiemtra(i) {
+        var temp = document.f.words;
+        var extemp = document.f.exwords;
+        
+        temp.options[i].selected = true;
+        extemp.options[i].selected = true;
+
+        return false;
+    }
+</script>
+
+<body>
+    <form action="" method="" name="f" onsubmit="return kiemtra();">
+        <div class="left">
+            <p>Chọn một từ tiếng anh</p>
+            <select name="words" id="" size="10">
+                <option value="Xin chào" onclick="return kiemtra(0)">Hello</option>
+                <option value="Hôm nay" onclick="return kiemtra(1)">Today</option>
+                <option value="Bầu trời" onclick="return kiemtra(2)">Sky</option>
+                <option value="Mèo" onclick="return kiemtra(3)">Cat</option>
+                <option value="Chó" onclick="return kiemtra(4)">Dog</option>
+                <option value="Hoa" onclick="return kiemtra(5)">Flower</option>
+                <option value="Con khỉ" onclick="return kiemtra(6)">Monkey</option>
+                <option value="Con gấu" onclick="return kiemtra(7)">Bear</option>
+                <option value="Con gà" onclick="return kiemtra(8)">Chicken</option>
+                <option value="Con ong" onclick="return kiemtra(9)">Bee</option>
+            </select>
+            
+            <br>
+        </div>
+        <div class="right">
+            <p>Giải nghĩa</p>
+            <select name="exwords" id="" size="10">
+                <option value="Hello" onclick="return kiemtra(0)">Xin chào</option>
+                <option value="Today" onclick="return kiemtra(1)">Hôm nay</option>
+                <option value="Sky" onclick="return kiemtra(2)">Bầu trời</option>
+                <option value="Cat" onclick="return kiemtra(3)">Mèo</option>
+                <option value="Dog" onclick="return kiemtra(4)">Chó</option>
+                <option value="Flower" onclick="return kiemtra(5)">Hoa</option>
+                <option value="Monkey" onclick="return kiemtra(6)">Con khỉ</option>
+                <option value="Bear" onclick="return kiemtra(7)">Con gấu</option>
+                <option value="Chicken Con gà" onclick="return kiemtra(8)">Con gà</option>
+                <option value="Bee" onclick="return kiemtra(9)">Con ong</option>
+            </select>
+        </div>
+        <!-- <input type="submit" value="Kiểm tra" > -->
+    </form>
+</body>
+
+</html>

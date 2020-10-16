@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+        width: 30%;
+        margin: auto;
+        margin-top: 50px;
+        border: 1px solid;
+        height: 270px;
+        padding: 25px;
+    }
+    
+    .left {
+        width: 50%;
+        float: left;
+    }
+    
+    .right {
+        width: 50%;
+        float: right;
+    }
+    
+    input {
+        margin-top: 10px;
+    }
+</style>
+<script>
+    function kiemtra(all) {
+        
+        var temp = document.f.words;
+
+        var checkbox = document.getElementsByName('sport');
+        var result = "";
+        if (all)
+        {
+            for (var j = 0; j < checkbox.length; j++) {
+                checkbox[j].checked = true;
+                result = result + checkbox[j].value + "\n";
+            }
+        }
+        else
+        {
+            for (var j = 0; j < checkbox.length; j++) {
+                if (checkbox[j].checked === true) {
+                    result = result + checkbox[j].value + "\n";
+                }
+            }
+        }
+        document.f.txtMean.value = result;
+        return !all;
+    }
+</script>
+
+<body>
+    <form action="" method="" name="f" onsubmit="return kiemtra(true);">
+        <div class="left">
+            <p>Sở thích</p>
+            <input type="checkbox" name="sport" value="Đá bóng" id="" onclick="return kiemtra();">Đá bóng <br>
+            <input type="checkbox" name="sport" value="Đá cầu" id="" onclick="return kiemtra();">Đá cầu <br>
+            <input type="checkbox" name="sport" value="Tennis" id="" onclick="return kiemtra();">Tennis <br>
+            <input type="checkbox" name="sport" value="Cầu lông" id="" onclick="return kiemtra();">Cầu lông <br>
+            <input type="checkbox" name="sport" value="Bóng bàn" id="" onclick="return kiemtra();">Bóng bàn <br>
+            <br>
+            <input type="submit" value="ALL">
+        </div>
+        <div class="right">
+            <textarea name="txtMean" id="txtMean" value="" cols="30" rows="10">
+            </textarea>
+        </div>
+        <!-- <input type="submit" value="ALL" > -->
+    </form>
+</body>
+
+</html>

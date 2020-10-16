@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_bai1</title>
+</head>
+<script>
+    function show() {
+        var temp = document.box.txtbox1.value;
+        document.box.txtbox2.value = temp;
+    }
+</script>
+
+<body>
+    <form action="post" name="box">
+        <input type="text" name="txtbox1" id="">
+        <input type="text" name="txtbox2" id="" disabled>
+        <input type="button" value="copy" onclick="show()">
+    </form>
+</body>
+
+</html>

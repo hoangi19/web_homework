@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+        width: 30%;
+        margin: auto;
+        margin-top: 50px;
+        border: 1px solid;
+        height: 270px;
+        padding: 25px;
+    }
+    
+    .left {
+        width: 50%;
+        float: left;
+    }
+    
+    .right {
+        width: 50%;
+        float: right;
+    }
+    
+    input {
+        margin-top: 10px;
+    }
+</style>
+<script>
+    function kiemtra() {
+        var temp = document.f.words;
+        if(temp.options[0].selected) alert("Chon tu di\n");
+        else
+        {
+            for (var i = 1; i < temp.length; i++) {
+                if (temp.options[i].selected == true) {
+                    document.f.txtMean.value = temp.options[i].value;
+                }
+            }
+        }
+        return false;
+    }
+</script>
+
+<body>
+    <form action="" method="" name="f" onsubmit="return kiemtra();">
+        <div class="left">
+            <p>Chọn một từ tiếng anh</p>
+            <select name="words" id="">
+                <option value="">Chọn một từ</option>
+    
+                <option value="Xin chào">Hello</option>
+                <option value="Hôm nay">Today</option>
+                <option value="Bầu trời">Sky</option>
+                <option value="Mèo">Cat</option>
+                <option value="Chó">Dog</option>
+    
+                <option value="Hoa">Flower</option>
+                <option value="Con khỉ">Monkey</option>
+                <option value="Con gấu">Bear</option>
+                <option value="Con gà">Chicken</option>
+                <option value="Con ong">Bee</option>
+            </select>
+            <br>
+        </div>
+        <div class="right">
+            <p>Giải nghĩa</p>
+            <textarea name="txtMean" id="txtMean" value="" cols="30" rows="10">
+            </textarea>
+        </div>
+        <input type="submit" value="Kiểm tra" >
+    </form>
+</body>
+
+</html>

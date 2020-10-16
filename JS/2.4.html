@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_bai3</title>
+</head>
+<style>
+    body {
+        width: 60%;
+        margin: auto;
+        /* margin-top: 100px; */
+        min-height: 700px;
+        border: 1px solid black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 50px;
+        /* background-color: #f443361c; */
+        background-image: url(./images/background.png);
+    }
+    
+    .head-top {
+        width: 100%;
+        background-color: #e13840ad;
+        height: 40px;
+        margin: 20px 0;
+        color: white;
+    }
+    
+    .head-top span {
+        font-style: italic;
+        float: left;
+        line-height: 2;
+        padding-left: 15px;
+    }
+    
+    .head {
+        width: 80%;
+        margin: auto;
+        min-height: 200px;
+    }
+    
+    .head_img {
+        width: 25%;
+        float: left;
+    }
+    
+    .account_img {
+        max-width: 190px;
+    }
+    
+    .head_info {
+        width: 65%;
+        float: right;
+    }
+    
+    .info {
+        font-weight: bold;
+    }
+    
+    .info span {
+        font-weight: normal;
+    }
+    
+    .input_textbox {}
+    
+    .left {
+        width: 50%;
+        float: left;
+    }
+    
+    .right {
+        width: 50%;
+        float: right;
+    }
+    
+    .list_check {
+        width: 50%;
+    }
+</style>
+<script>
+    function getData() {
+        var name = document.INFO.input_textbox.value;
+        if (name = "") {
+            alert("Tên không được để trống");
+            return false;
+        }
+        var date = document.INFO.date.value;
+        if (date = "") {
+            alert("date không được để trống");
+            return false;
+        }
+        var length = document.INFO.address.length;
+        for (var i = 0; i < length; i++) {
+            var address = document.INFO.address.options[i].text;
+        }
+        if (address = "") {
+            alert("address không được để trống");
+            return false;
+        }
+        var sxm = document.getElementById("male");
+        var sxfm = document.getElementById("female");
+        if ((sxm.checked == false) && (sxfm.checked == false)) {
+            alert("Bạn phải chọn một giới tính");
+            return false;
+        }
+        var live = document.INFO.live_add.value;
+        if (live = "") {
+            alert("địa chỉ không được để trống");
+            return false;
+        }
+
+        var eduLength = document.INFO.educate.length;
+        for (var j = 0; j < eduLength; j++) {
+            var edu = document.INFO.educate.options[j].text;
+        }
+        if (edu = "") {
+            alert("edu không được để trống");
+            return false;
+        }
+
+        var checkbox = document.getElementsByName('lang');
+        var result = "";
+        for (var j = 0; j < checkbox.length; j++) {
+            if (checkbox[j].checked === true) {
+                result += checkbox[j].value + ", ";
+            }
+        }
+
+        var checkbox_hbb = document.getElementsByName('hobby');
+        var res = "";
+        for (var k = 0; k < checkbox_hbb.length; k++) {
+            if (checkbox_hbb[k].checked === true) {
+                res += checkbox_hbb[k].value + ", ";
+            }
+        }
+
+        var txtarea = document.INFO.note.value;
+    }
+</script>
+
+<body>
+    <div class="head-top">
+        <span>Thực tập sinh lập trình Web</span>
+    </div>
+    <form action="#" method="post" name="INFO" onsubmit="return getData()">
+        <div class="head">
+            <div class="head_img">
+                <img src="./images/cat_cute.jpg" alt="" class="account_img">
+            </div>
+            <div class="head_info">
+                <p class="info">Họ và tên
+                    <input type="text" class="input_textbox" name="input_textbox">
+                </p>
+                <p class="info">Ngày sinh:
+                    <input type="date" name="date" id="dateinput">
+                </p>
+                <p class="info">Địa chỉ:
+                    <select name="address" id="address">
+                            <option value="volvo">Hà Nội</option>
+                            <option value="saab">Hà Nam</option>
+                            <option value="opel">Bắc Ninh</option>
+                            <option value="audi">Tp Hồ Chí Minh</option>
+                        </select>
+                </p>
+                <p class="info">Giới tính:
+                    <input type="radio" class="info_radio" name="male" id="male">Nam
+                    <input type="radio" class="info_radio" name="male" id="female">Nữ
+                </p>
+                <p class="info">Địa chỉ:
+                    <input type="text" name="live_add">
+                </p>
+                <p class="info">Đào tạo:
+                    <select name="educate" id="educate">
+                            <option value="volvo">Cao Đẳng</option>
+                            <option value="saab">Đại học</option>
+                            <option value="opel">Thạc sĩ</option>
+                            <option value="audi">Tiến sĩ</option>
+                        </select>
+                </p>
+                <div class="group">
+                    <div class="left">
+                        <p class="info left">Ngoại ngữ:</p>
+                        <div class="list_check">
+                            <input type="checkbox" id="vehicle1" name="lang">
+                            <label for="vehicle1"> Tiếng Anh</label><br>
+                            <input type="checkbox" id="vehicle2" name="lang">
+                            <label for="vehicle2"> Tiếng Pháp</label><br>
+                            <input type="checkbox" id="vehicle3" name="lang">
+                            <label for="vehicle3"> Tiếng Đức</label><br>
+                            <input type="checkbox" id="vehicle4" name="lang">
+                            <label for="vehicle4"> Tiếng Trung</label><br>
+                            <input type="checkbox" id="vehicle5" name="lang">
+                            <label for="vehicle5"> Tiếng Đức</label><br>
+                            <input type="checkbox" id="vehicle6" name="lang">
+                            <label for="vehicle6"> Khác</label><br><br>
+                        </div>
+
+                    </div>
+                    <div class="right">
+                        <p class="info">Sở thích:</p>
+                        <div class="list_check1">
+                            <input type="checkbox" id="hobby1" name="hobby">
+                            <label for="hobby1"> Du lịch</label><br>
+                            <input type="checkbox" id="hobby2" name="hobby">
+                            <label for="hobby2"> Đọc sách</label><br>
+                            <input type="checkbox" id="hobby3" name="hobby">
+                            <label for="hobby3"> Xem phim</label><br>
+                            <input type="checkbox" id="hobby4" name="hobby">
+                            <label for="hobby4"> Đá bóng</label><br>
+                            <input type="checkbox" id="hobby5" name="hobby">
+                            <label for="hobby5"> Tennis</label><br>
+                            <input type="checkbox" id="hobby6" name="hobby">
+                            <label for="hobby6"> Khác</label><br><br>
+                        </div>
+                    </div>
+                </div>
+                <p class="info">Ghi chú: </p>
+                <textarea name="note" class="note" id="note" cols="60" rows="5"></textarea>
+                <input name="Submit" type="submit" value="Submit" />
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

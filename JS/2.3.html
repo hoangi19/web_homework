@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_bai3</title>
+</head>
+
+<body>
+
+    <script language="javascript">
+        function count() { //document.f.txtnoidung.value=document.f.txtnoidung.value.trim();
+            document.f.txtCount.value = document.f.txtnoidung.value.length;
+        }
+        
+    </script>
+
+    <center>
+        <form name="f" method="POST" action="">
+            <table border="1" width="75%" id="table1" style="border-width: 0px">
+                <tr>
+                    <td align="right" style="border-style: none; border-width: medium">
+                        <b>Nội dung</b>
+                    </td>
+                    <td style="border-style: none; border-width: medium">
+                        <input type="text" name="txtnoidung" cols="40" rows="5" onkeyup="count();">
+                    </td>
+                </tr>
+                <tr>
+                    <td width="25%" align="right" style="border-style: none; border-width: medium">
+                        <b>Số ký tự </b>
+                    </td>
+                    <td style="border-style: none; border-width: medium">
+                        <input type="text" name="txtCount" value="0" size="10" maxlength="10" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-style: none; border-width: medium"></td>
+                    <td style="border-style: none; border-width: medium">
+                        <input type="button" name="butUCLN" value="Đóng" onClick="close()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+</body>
+
+</html>

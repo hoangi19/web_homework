@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form {
+        width: 30%;
+        margin: auto;
+        margin-top: 50px;
+        border: 1px solid;
+        height: 270px;
+        padding: 25px;
+    }
+    
+    .left {
+        width: 50%;
+        float: left;
+    }
+    
+    .right {
+        width: 50%;
+        float: right;
+    }
+    
+    input {
+        margin-top: 10px;
+    }
+</style>
+<script>
+    function kiemtra(all) {
+        
+        var temp = document.f.fav;
+
+        var checkbox = document.getElementsByName('sport');
+        var result = "";
+        // alert(all);
+        if (all)
+        {
+            for (var j = 0; j < checkbox.length; j++) {
+                checkbox[j].selected = true;
+                result = result + checkbox[j].value + "\n";
+            }
+        }
+        else
+        {
+            for (var j = 0; j < checkbox.length; j++) {
+                checkbox[j].selected = !checkbox[j].selected;
+                if (checkbox[j].selected === true) {
+                    result = result + checkbox[j].value + "\n";
+                }
+            }
+        }
+        document.f.txtMean.value = result;
+        return false;
+    }
+</script>
+
+<body>
+    <form action="" method="" name="f" onsubmit="">
+        <div class="left">
+            <p>Sở thích</p>
+            <select select name="fav" id="" size="10">
+                <option name="sport" value="Đá bóng" id="">Đá bóng </option>
+                <option name="sport" value="Đá cầu" id="" >Đá cầu </option>
+                <option name="sport" value="Tennis" id="" >Tennis </option>
+                <option name="sport" value="Cầu lông" id="">Cầu lông </option>
+                <option name="sport" value="Bóng bàn" id="">Bóng bàn </option>
+            </select>
+            <br>
+            <button onclick="return kiemtra(true);" class="btn btn-success">add all</button>
+            <button onclick="return kiemtra(false);" class="btn btn-success">add</button>
+        </div>
+        <div class="right">
+            <textarea name="txtMean" id="txtMean" value="" cols="30" rows="10">
+            </textarea>
+        </div>
+        <!-- <input type="submit" value="ALL" > -->
+    </form>
+</body>
+
+</html>

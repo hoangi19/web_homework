@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<style>
+    .checkForm {
+        width: 35%;
+        margin: auto;
+        margin-top: 50px;
+        border: 1px solid;
+        padding: 10px;
+    }
+    
+    .btn-sub {
+        margin-top: 20px;
+    }
+    
+    p {
+        font-style: italic;
+    }
+</style>
+<script>
+    function kiemtra() {
+        var checkbox = document.getElementsByName('sport');
+        var result = [];
+        for (var j = 0; j < checkbox.length; j++) {
+            if (checkbox[j].checked === true) {
+                result.push(checkbox[j].value);
+            }
+        }
+
+        var checkradio = document.getElementsByName('lang');
+        var res = [];
+        for (var i = 0; i < checkradio.length; i++) {
+            if (checkradio[i].checked === true) {
+                res.push(checkradio[i].defaultValue);
+            }
+        }
+
+        if (result.length > 3) {
+            alert("Chọn tối đa 3 sở thích.")
+        } else {
+            alert("Thể thao là: " + result + ",ngôn ngữ là: " + res);
+        }
+        return (false);
+    }
+</script>
+
+<body>
+    <div class="checkForm">
+        <form name="f1" METHOD="POST" onsubmit="return(kiemtra());">
+            <p>Sở thích</p>
+            <input type="checkbox" name="sport" value="Đá bóng" id="">Đá bóng
+            <input type="checkbox" name="sport" value="Đá cầu" id="">Đá cầu
+            <input type="checkbox" name="sport" value="Tennis" id="">Tennis
+            <input type="checkbox" name="sport" value="Cầu lông" id="">Cầu lông
+            <input type="checkbox" name="sport" value="Bóng bàn" id="">Bóng bàn
+            <p>Ngôn ngữ yêu thích nhất</p>
+            <input type="radio" name="lang" value="Tiếng Anh" id="">Tiếng Anh
+            <input type="radio" name="lang" value="Tiếng Pháp" id="">Tiếng Pháp
+            <input type="radio" name="lang" value="Tiếng Đức" id="">Tiếng Đức
+            <input type="radio" name="lang" value="Tiếng Trung" id="">Tiếng Trung
+            <input type="radio" name="lang" value="Tiếng Nga" id="">Tiếng Nga
+            <br>
+            <input type="submit" class="btn-sub" value="Kiểm tra">
+        </form>
+    </div>
+</body>
+
+</html>

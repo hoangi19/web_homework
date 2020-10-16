@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset = UTF-8">
+</head>
+<style>
+    p {
+        width: 73%;
+        margin: auto;
+        padding-bottom: 15px;
+    }
+    
+    .checkForm {
+        width: 15%;
+        margin: auto;
+        border: 1px solid;
+        padding: 18px;
+        margin-top: 50px;
+    }
+</style>
+<script language=javascript>
+    var dem = 0;
+    function kiemtra1() {
+        var user = "Administrator";
+        var pass = "Admin";
+        var formUser = f1.txtuser.value;
+        var formPass = f1.txtpass.value;
+        
+        if (formUser === user && formPass === pass) {
+            alert("Success!! Welcome");
+        } else {
+            dem = dem + 1;
+            alert("Login fail." + dem);
+        }
+        if (dem == 3) {
+            f1.txtuser.disabled = true;
+            f1.txtpass.disabled = true;
+        }
+        return (false);
+    }
+</script>
+
+<body>
+    <div class="checkForm">
+        <form name="f1" METHOD="POST" onsubmit="return(kiemtra1());">
+            <p>
+                <b>User:</b><input type="text" name="txtuser" value="" size=20 maxlength=20>
+            </p>
+
+            <p>
+                <b>Password:</b><input type="password" name="txtpass" value="" size=20 maxlength=20>
+            </p>
+
+            <p>
+                <input type="submit" value="Kiểm tra" name="B1"><input type="reset" value="Xóa" name="R1">
+            </p>
+        </form>
+    </div>
+
+</body>
+
+</html>

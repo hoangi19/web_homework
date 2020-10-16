@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML_bai3</title>
+</head>
+<style>
+    body {
+        width: 60%;
+        margin: auto;
+        /* margin-top: 100px; */
+        min-height: 700px;
+        border: 1px solid black;
+        font-size: 16px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-bottom: 50px;
+        /* background-color: #f443361c; */
+        background-image: url(./images/background.png);
+    }
+    
+    .head-top {
+        width: 100%;
+        background-color: #e13840ad;
+        height: 40px;
+        margin: 20px 0;
+        color: white;
+    }
+    
+    .head-top span {
+        font-style: italic;
+        float: left;
+        line-height: 2;
+        padding-left: 15px;
+    }
+    
+    .head {
+        width: 80%;
+        margin: auto;
+        min-height: 200px;
+    }
+    
+    .head_img {
+        width: 25%;
+        float: left;
+    }
+    
+    .account_img {
+        max-width: 190px;
+    }
+    
+    .head_info {
+        width: 65%;
+        float: right;
+    }
+    
+    .info {
+        font-weight: bold;
+    }
+    
+    .info span {
+        font-weight: normal;
+    }
+    
+    .input_textbox {}
+    
+    .left {
+        width: 50%;
+        float: left;
+    }
+    
+    .right {
+        width: 50%;
+        float: right;
+    }
+    
+    .list_check {
+        width: 50%;
+    }
+</style>
+
+<body>
+    <div class="head-top">
+        <span>Thực tập sinh lập trình Web</span>
+    </div>
+    <div class="head">
+        <div class="head_img">
+            <img src="./images/cat_cute.jpg" alt="" class="account_img">
+        </div>
+        <div class="head_info">
+            <p class="info">Họ và tên
+                <input type="text" class="input_textbox" value="Nguyễn Việt Hoàng">
+            </p>
+            <p class="info">Ngày sinh:
+                <input type="date" name="date" id="dateinput">
+            </p>
+            <p class="info">Địa chỉ:
+                <select name="address" id="address">
+                        <option value="volvo">Hà Nội</option>
+                        <option value="saab">Hà Nam</option>
+                        <option value="opel">Bắc Ninh</option>
+                        <option value="audi">Tp Hồ Chí Minh</option>
+                    </select>
+            </p>
+            <p class="info">Giới tính:
+                <input type="radio" class="info_radio" name="male" id="male">Nam
+                <input type="radio" class="info_radio" name="male" id="female">Nữ
+            </p>
+            <p class="info">Địa chỉ:
+                <span>Hà Nội</span>
+            </p>
+            <p class="info">Đào tạo:
+                <select name="educate" id="educate">
+                        <option value="volvo">Cao Đẳng</option>
+                        <option value="saab">Đại học</option>
+                        <option value="opel">Thạc sĩ</option>
+                        <option value="audi">Tiến sĩ</option>
+                    </select>
+            </p>
+            <div class="group">
+                <div class="left">
+                    <p class="info left">Ngoại ngữ:</p>
+                    <div class="list_check">
+                        <input type="checkbox" id="vehicle1" name="lang">
+                        <label for="vehicle1"> Tiếng Anh</label><br>
+                        <input type="checkbox" id="vehicle2" name="lang">
+                        <label for="vehicle2"> Tiếng Pháp</label><br>
+                        <input type="checkbox" id="vehicle3" name="lang">
+                        <label for="vehicle3"> Tiếng Đức</label><br>
+                        <input type="checkbox" id="vehicle4" name="lang">
+                        <label for="vehicle4"> Tiếng Trung</label><br>
+                        <input type="checkbox" id="vehicle5" name="lang">
+                        <label for="vehicle5"> Tiếng Đức</label><br>
+                        <input type="checkbox" id="vehicle6" name="lang">
+                        <label for="vehicle6"> Khác</label><br><br>
+                    </div>
+
+                </div>
+                <div class="right">
+                    <p class="info">Sở thích:</p>
+                    <div class="list_check">
+                        <input type="checkbox" id="hobby1" name="hobby1">
+                        <label for="hobby1"> Du lịch</label><br>
+                        <input type="checkbox" id="hobby2" name="hobby2">
+                        <label for="hobby2"> Đọc sách</label><br>
+                        <input type="checkbox" id="hobby3" name="hobby3">
+                        <label for="hobby3"> Xem phim</label><br>
+                        <input type="checkbox" id="hobby4" name="hobby4">
+                        <label for="hobby4"> Đá bóng</label><br>
+                        <input type="checkbox" id="hobby5" name="hobby5">
+                        <label for="hobby5"> Tennis</label><br>
+                        <input type="checkbox" id="hobby6" name="hobby6">
+                        <label for="hobby6"> Khác</label><br><br>
+                    </div>
+                </div>
+            </div>
+            <p class="info">Ghi chú: </p>
+            <textarea name="note" class="note" id="note" cols="60" rows="5"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
